@@ -33,4 +33,12 @@ public class MainControllerTests {
                 .andExpect(content().string("Good bye my friend"));
     }
 
+    @Test
+    public void testFailure() throws Exception {
+
+        mockMvc.perform(get("/fail"))
+                .andExpect(status().isOk())
+                .andExpect(content().string("Good bye my friend"));
+    }
+
 }
